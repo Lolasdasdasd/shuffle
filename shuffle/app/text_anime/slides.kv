@@ -1,0 +1,71 @@
+#:kivy 1.0.9
+
+<ManualSlides>:
+    element1:element1
+    element2:element2
+    element3:element3
+    element4:element4
+
+    Label:
+        id:element1
+        font_size: 100  
+        x: 0
+        y: 0#root.height / 2
+        width: root.width / 2
+        height: root.height
+        text: "HelloOne"
+        background_color: (1,0,0.5,1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    Label:
+        id:element2
+        font_size: 100  
+        x: root.width / 2
+        y: 0#root.height / 2
+        width: root.width / 2
+        height: root.height
+        text: "HelloTwo"
+        background_color: (0,0.2,0.8,1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    Label:
+        id:element3
+        font_size: 100  
+        x: root.width
+        y: 0
+        width: root.width / 2
+        height: root.height
+        text: "HelloThree"
+        background_color: (0.8,0.5,0,1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+    Label:
+        id:element4
+        font_size: 100  
+        x: root.width * 3 / 2
+        y: 0
+        width: root.width / 2
+        height: root.height
+        text: "HelloFour"
+        background_color: (0.3,0.8,0.5,1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
