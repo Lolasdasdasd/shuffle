@@ -22,6 +22,13 @@ class ManualSlides(Widget):
     element4 = ObjectProperty(None) # defined in text.kv
     gen = ObjectProperty(MoveSequenceGenerator(MovesDB(DATADIR / "moves.csv")))
 
+    def __init__(self, **kwargs):
+        super(ManualSlides, self).__init__(**kwargs)
+        self.element1.text = self.gen.walk()
+        self.element2.text = self.gen.walk()
+        self.element3.text = self.gen.walk()
+        self.element4.text = self.gen.walk()
+
     def rotate(self, blu):
         self.gen.pointer += 1
         elements = [self.element1, self.element2, self.element3, self.element4]
@@ -39,10 +46,7 @@ class ManualSlides(Widget):
 class SlidesApp(App):
     def build(self):
         app = ManualSlides()
-        app.element1.text = app.gen.walk()
-        app.element2.text = app.gen.walk()
-        app.element3.text = app.gen.walk()
-        app.element4.text = app.gen.walk()
+        
         Clock.schedule_interval(app.rotate, 2 * 70.0 / 50.0)# / 60.0)
         #140 / 70 Bring Ban Bang Born
 
