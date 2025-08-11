@@ -8,13 +8,28 @@
     text: root.counter_string
     on_press: root.add()
 
+<Register>
+    orientation: 'vertical'
+
+<LabledTextInput>:
+    label:label
+    input:input
+
+    orientation: "vertical"
+    Label:
+        id:label
+        text: "LabledTextINput"
+
+    TextInput:
+        id:input
+        text: "text input"
+        on_focus: self.text = '' if args[1] else self.text
+
 <Feedback>:
     orientation: "horizontal"
     Button:
         text: "Button1"
     Button:
         text: "Button2"
-        
+
     BPMDetector:
-
-
